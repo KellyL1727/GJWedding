@@ -340,7 +340,7 @@
     }
 
     .weekend-row div {
-      color: var(--muted);
+      color: rgba(255,255,255,.82);
       line-height: 1.6;
     }
 
@@ -359,6 +359,11 @@
       font-size: 11px;
     }
 
+    .weekend a {
+      color: white;
+      text-underline-offset: 3px;
+    }
+
     footer {
       padding: 30px 8vw;
       text-align: center;
@@ -367,32 +372,263 @@
       color: var(--muted);
     }
 
+    /* Mobile improvements */
     @media (max-width: 800px) {
+      html {
+        scroll-padding-top: 68px;
+      }
+
+      body {
+        overflow-x: hidden;
+      }
+
       nav {
-        padding: 17px 5vw;
+        padding: 12px 5vw;
+        min-height: 58px;
+      }
+
+      .logo {
+        font-size: 22px;
+        white-space: nowrap;
+      }
+
+      nav > div:last-child {
+        display: flex;
+        gap: 14px;
+        align-items: center;
       }
 
       nav a {
-        margin-left: 12px;
+        margin-left: 0;
+        font-size: 8px;
+        letter-spacing: .08em;
+        white-space: nowrap;
+      }
+
+      .hero {
+        min-height: 100svh;
+        padding: 95px 6vw 55px;
+        background-position: center center;
+      }
+
+      .hero-inner {
+        width: 100%;
+      }
+
+      .kicker {
         font-size: 9px;
-      }
-
-      .story,
-      .events {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 75px 6vw;
-      }
-
-      .detail-row {
-        grid-template-columns: 1fr;
-        gap: 8px;
+        letter-spacing: .18em;
+        line-height: 1.6;
+        margin-bottom: 18px;
       }
 
       .hero h1 {
-        font-size: 72px;
+        font-size: clamp(54px, 18vw, 82px);
+        line-height: .84;
+        margin-bottom: 22px;
+        opacity: .72;
+      }
+
+      .hero .date {
+        font-size: 19px;
+        line-height: 1.3;
+      }
+
+      .hero .scroll {
+        margin-top: 42px;
+        font-size: 9px;
+      }
+
+      section {
+        padding: 68px 6vw;
+      }
+
+      .intro h2 {
+        font-size: clamp(42px, 13vw, 60px);
+        line-height: .94;
+        margin-bottom: 22px;
+      }
+
+      .intro p {
+        font-size: 21px;
+        line-height: 1.4;
+      }
+
+      .story {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+
+      .photo-placeholder {
+        min-height: 330px;
+        margin: 0 -1vw;
+      }
+
+      .story h2 {
+        font-size: clamp(48px, 14vw, 64px);
+        line-height: .92;
+      }
+
+      .story p {
+        line-height: 1.7;
+      }
+
+      .days-header {
+        margin-bottom: 38px;
+      }
+
+      .days-header h2 {
+        font-size: clamp(48px, 14vw, 68px);
+        line-height: .92;
+      }
+
+      .events {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .card {
+        min-height: auto;
+        padding: 27px;
+      }
+
+      .card h3 {
+        font-size: clamp(40px, 12vw, 54px);
+        line-height: .9;
+        margin: 14px 0 18px;
+      }
+
+      .card p {
+        font-size: 15px;
+        line-height: 1.65;
+      }
+
+      .card p + p {
+        border-top: 1px solid rgba(103,31,43,.12);
+        padding-top: 15px;
+      }
+
+      .card .mini-photo {
+        height: 190px;
+        margin: 20px -27px -27px;
+      }
+
+      .details h2,
+      .weekend h2,
+      .rsvp h2 {
+        font-size: clamp(50px, 15vw, 70px);
+        line-height: .9;
+      }
+
+      .weekend-row {
+        grid-template-columns: 115px 1fr;
+        gap: 22px;
+        padding: 24px 0;
+        align-items: start;
+      }
+
+      .weekend-row strong {
+        font-size: 9px;
+        padding-top: 3px;
+      }
+
+      .weekend-row div {
+        font-size: 15px;
+        line-height: 1.55;
+      }
+
+      .deets {
+        text-align: left;
+      }
+
+      .weekend a {
+      color: white;
+      text-underline-offset: 3px;
+    }
+
+    footer {
+        padding: 25px 6vw;
+        font-size: 18px;
+      }
+    }
+
+
+    /* Compact wedding-weekend information */
+    .days-header p {
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.65;
+    }
+
+    .card p + p {
+      margin-top: 18px;
+    }
+
+    .card p strong {
+      display: inline-block;
+      color: var(--burgundy);
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+
+    @media (max-width: 800px) {
+      .days-header p {
+        font-size: 15px;
+        line-height: 1.65;
+      }
+
+      .card p + p {
+        margin-top: 15px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      nav {
+        padding-left: 4vw;
+        padding-right: 4vw;
+      }
+
+      nav > div:last-child {
+        gap: 9px;
+      }
+
+      nav a {
+        font-size: 7px;
+      }
+
+      .hero {
+        padding-left: 5vw;
+        padding-right: 5vw;
+      }
+
+      .hero h1 {
+        font-size: 18vw;
+      }
+
+      .hero .date {
+        font-size: 18px;
+      }
+
+      section {
+        padding-left: 5vw;
+        padding-right: 5vw;
+      }
+
+      .photo-placeholder {
+        min-height: 280px;
+      }
+
+      .card {
+        padding: 24px;
+      }
+
+      .card .mini-photo {
+        margin-left: -24px;
+        margin-right: -24px;
+        margin-bottom: -24px;
       }
     }
   </style>
